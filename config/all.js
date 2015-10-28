@@ -9,12 +9,14 @@ module.exports = {
     //"start": <UNIX_TS>, //override default 30 days
     //"end":  <UNIX_TS>,
     //"filter": "fb.author.country_code == \"US\"", //limit all requests in config file to specified CSDL
+    //"runonly": true, // set this property to true to run only explicitly specified queries
     "analysis": {
         "freqDist": [
             {
                 "name": "example_freqDist",
                 "target": "fb.parent.topics.name",
-                "threshold": 3
+                "threshold": 3,
+                //"runonly": true // must be set to true to run if global runonly is true
             },
             {
                 "example_merged_freqDist": [
